@@ -16,6 +16,7 @@ package codeeval_BlackCard;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 /*
  Challenge Description:
 
@@ -27,12 +28,14 @@ package codeeval_BlackCard;
  black spot simply leaves the game.
  For example, we have a list of three players: John, Tom, Mary, and a number 5.
  Starting with the first player (in our case, it’s John), we start to count all 
- players: John – 1, Tom – 2, Mary – 3, and then again starting from the first one
- John – 4, Tom – 5. As Tom gets number 5, he should leave. Now, we have John and 
+ players: John – 1, Tom – 2, Mary – 3, and then again starting from the first
+ one John – 4, Tom – 5. As Tom gets number 5, he should leave. Now, we have John and 
  Mary and start counting again. John gets number 5, so he leaves. Thus, 
  the winner is Mary.
 
- The first argument is a path to a file. Each line includes a test case with names of players and a number for a “black spot”. Players and a number are separated by a pipeline '|'. 
+ The first argument is a path to a file. Each line includes a test case with 
+ names of players and a number for a “black spot”. Players and a number are
+ separated by a pipeline '|'. 
  */
 import java.io.BufferedReader;
 import java.io.File;
@@ -54,7 +57,6 @@ public class Main {
      */
     private static void readLinesOfFile(String fileName) {
         File file = new File(fileName);
-
         if (!file.canRead() || !file.isFile()) {
             System.exit(0);
         }
@@ -62,11 +64,9 @@ public class Main {
         String row;
         try {
             in = new BufferedReader(new FileReader(fileName));
-
             while ((row = in.readLine()) != null) {
                 processString(row);
             }
-
         } catch (IOException ioEx) {
             ioEx.printStackTrace();
         } finally {
@@ -101,7 +101,6 @@ public class Main {
             }
         }
         System.out.println(names.get(0));
-
     }
 
     /**
