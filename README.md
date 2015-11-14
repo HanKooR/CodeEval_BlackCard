@@ -1,3 +1,2 @@
-# CodeEval_LCS
+# CodeEval_BlackCard
 https://www.codeeval.com/open_challenges/222/
-"Black card"
